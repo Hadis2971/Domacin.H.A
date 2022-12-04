@@ -1,4 +1,10 @@
-import { PageContentContainer, PageTitleDescription } from "../../components";
+import {
+  PageContentContainer,
+  PageTitleDescription,
+  Product,
+} from "../../components";
+
+import "./index.scss";
 
 export default () => {
   return (
@@ -10,6 +16,50 @@ export default () => {
         titleColor="#3c4858"
         descriptionColor="#999999"
       />
+
+      <div id="products-list">
+        <Product
+          title="Bombice mix – Unikatni poklon"
+          description="Čarobno srce – Unikatni pokloni – handmade je divan trik koji mami osmijeh i budi najljepše osjećaje. Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
+          price={50}
+        />
+
+        <Product
+          title="Bombice mix – Unikatni poklon"
+          description="Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
+          price={50}
+        />
+
+        <Product
+          title="Bombice mix – Unikatni poklon"
+          description="Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
+          price={50}
+        />
+
+        <Product
+          title="Bombice mix – Unikatni poklon"
+          description="Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
+          price={50}
+        />
+
+        <Product
+          title="Bombice mix – Unikatni poklon"
+          description="Čarobno srce – Unikatni pokloni – handmade je divan trik koji mami osmijeh i budi najljepše osjećaje. Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
+          price={50}
+        />
+
+        <Product
+          title="Bombice mix – Unikatni poklon"
+          description="Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
+          price={50}
+        />
+
+        <Product
+          title="Bombice mix – Unikatni poklon"
+          description="Čarobno srce – Unikatni pokloni – handmade je divan trik koji mami osmijeh i budi najljepše osjećaje. Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
+          price={50}
+        />
+      </div>
     </PageContentContainer>
   );
 };
