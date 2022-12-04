@@ -1,9 +1,13 @@
-import { PageTitleDescription } from "../../components";
+import { PageContentContainer, PageTitleDescription } from "../../components";
 
 export default () => {
   return (
-    <div>
+    <>
       <PageTitleDescription title="Shop" bgColor="#a81d84" titleColor="#FFF" />
-    </div>
+
+      <PageContentContainer topPosition="-100px">
+        <h1>Hello Shop</h1>
+      </PageContentContainer>
+    </>
   );
 };

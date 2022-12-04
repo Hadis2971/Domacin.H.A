@@ -7,20 +7,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <>
+    <div id="app-container">
       <NavBar />
 
-      <div id="app-container">
-        <div id="app">
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/shop" element={<Shop />} />
-            <Route exact path="/articles" element={<Articles />} />
-            <Route path="*" element={<NoMatch />} />
-          </Routes>
-        </div>
-      </div>
-    </>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/shop" element={<Shop />} />
+        <Route exact path="/articles" element={<Articles />} />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </div>
   );
 }
 

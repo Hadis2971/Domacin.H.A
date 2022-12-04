@@ -1,13 +1,17 @@
-import { PageTitleDescription } from "../../components";
+import { PageContentContainer, PageTitleDescription } from "../../components";
 
 export default () => {
   return (
-    <div>
+    <>
       <PageTitleDescription
         title="Clanci"
         bgColor="#a81d84"
         titleColor="#FFF"
       />
-    </div>
+
+      <PageContentContainer topPosition="-100px">
+        <h1>Hello Articles</h1>
+      </PageContentContainer>
+    </>
   );
 };

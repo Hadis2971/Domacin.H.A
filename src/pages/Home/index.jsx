@@ -1,8 +1,8 @@
-import { PageTitleDescription } from "../../components";
+import { PageContentContainer, PageTitleDescription } from "../../components";
 
 export default () => {
   return (
-    <div>
+    <PageContentContainer>
       <PageTitleDescription
         title="Proizvodi"
         description="U našoj ponudi možete pronaći samo 387 handmade proizvode. Podržimo male biznise kupovinom domaćeg. Kupujmo 387"
@@ -10,6 +10,6 @@ export default () => {
         titleColor="#3c4858"
         descriptionColor="#999999"
       />
-    </div>
+    </PageContentContainer>
   );
 };
