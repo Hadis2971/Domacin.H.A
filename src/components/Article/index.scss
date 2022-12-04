@@ -1,0 +1,30 @@
+.article-container {
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  background-color: #fff;
+
+  .article-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .image-container {
+    width: 100%;
+    margin-right: 10px;
+    .image {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .article-footer {
+    border-top: 1px solid #d9d9d9;
+    padding: 10px;
+  }
+
+  p {
+    color: #999999;
+  }
+}
