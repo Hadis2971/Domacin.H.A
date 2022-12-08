@@ -16,6 +16,7 @@ export default () => {
         bgColor=""
         titleColor="#3c4858"
         descriptionColor="#999999"
+        homePage
       />
 
       <div id="products-list">
@@ -69,6 +70,7 @@ export default () => {
           bgColor=""
           titleColor="#3c4858"
           descriptionColor="#999999"
+          homePage
         />
 
         <div id="home-page-articles-container">

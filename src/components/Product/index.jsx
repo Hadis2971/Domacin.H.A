@@ -1,6 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
+import "./index.scss";
+
 export default ({ title, description, price }) => {
   return (
     <Card style={{ width: "18rem" }}>

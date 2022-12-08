@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-import "./index.scss";
-
 const Wrapper = styled.div`
   background-color: ${(props) => props.bgColor};
+  padding: ${(props) => (props.homePage ? "70px 100px" : "150px 100px")};
+  width: 100%;
+  text-align: center;
 `;
 
 const H1 = styled.h1`
@@ -15,13 +16,18 @@ const P = styled.p`
 `;
 
 export default ({
+  homePage,
   title,
   description,
   titleColor,
   descriptionColor,
   bgColor,
 }) => (
-  <Wrapper id="page-title-description-container" bgColor={bgColor}>
+  <Wrapper
+    id="page-title-description-container"
+    bgColor={bgColor}
+    homePage={homePage}
+  >
     <H1 titleColor={titleColor}>{title}</H1>
     {description && <P descriptionColor={descriptionColor}>{description}</P>}
   </Wrapper>
