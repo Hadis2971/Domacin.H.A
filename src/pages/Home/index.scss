@@ -11,3 +11,14 @@
     grid-template-columns: auto;
   }
 }
+
+#home-page-articles-list {
+  #home-page-articles-container {
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 20px;
+  }
+}
