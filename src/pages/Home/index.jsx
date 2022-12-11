@@ -9,7 +9,7 @@ import "./index.scss";
 
 export default () => {
   return (
-    <PageContentContainer>
+    <PageContentContainer homePage>
       <PageTitleDescription
         title="Proizvodi"
         description="U našoj ponudi možete pronaći samo 387 handmade proizvode. Podržimo male biznise kupovinom domaćeg. Kupujmo 387"

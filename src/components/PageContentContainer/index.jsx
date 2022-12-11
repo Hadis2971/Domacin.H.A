@@ -2,11 +2,11 @@ import "./index.scss";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  top: ${(props) => props.topPosition};
+  top: ${(props) => (props.homePage ? "0px" : "250px")};
 `;
 
-export default ({ children, topPosition }) => (
-  <Wrapper id="page-content-container" topPosition={topPosition}>
+export default ({ children, homePage }) => (
+  <Wrapper id="page-content-container" homePage={homePage}>
     {children}
   </Wrapper>
 );

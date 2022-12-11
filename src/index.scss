@@ -1,7 +1,28 @@
+$base-text-buttons-color: #e91e63;
+$base-description-color: #999999;
+$base-title-color: #3c4858;
+
+html {
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   width: 100vw;
   height: 100vh;
   margin: 0px;
   padding: 0px;
   background-color: #d9d9d9;
+}
+
+.btn.btn-primary {
+  background-color: $base-text-buttons-color;
+  color: #fff;
+  outline: none;
+  border: none;
+
+  &:focus {
+    background-color: $base-text-buttons-color;
+  }
 }

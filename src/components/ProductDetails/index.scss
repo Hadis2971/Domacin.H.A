@@ -1,6 +1,8 @@
+@import "../../index.scss";
+
 #product-details-container {
   h4 {
     text-align: center;
-    color: #3c4858;
+    color: $base-title-color;
   }
 }

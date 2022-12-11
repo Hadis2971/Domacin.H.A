@@ -5,7 +5,7 @@ export default () => {
     <>
       <PageTitleDescription title="Shop" bgColor="#a81d84" titleColor="#FFF" />
 
-      <PageContentContainer topPosition="-100px">
+      <PageContentContainer>
         <h1>Hello Shop</h1>
       </PageContentContainer>
     </>

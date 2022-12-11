@@ -22,7 +22,7 @@ export default () => {
         titleColor="#FFF"
       />
 
-      <PageContentContainer topPosition="-100px">
+      <PageContentContainer>
         <Container>
           <Row className="pt-10">
             <Col md={7} sm={12}>

@@ -4,6 +4,7 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.bgColor};
   padding: ${(props) => (props.homePage ? "70px 100px" : "150px 100px")};
   width: 100%;
+  position: ${(props) => (props.homePage ? "relative" : "absolute")};
   text-align: center;
 `;
 

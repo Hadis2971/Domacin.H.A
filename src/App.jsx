@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+
 import { Home, Shop, Articles, NoMatch } from "./pages";
 import { NavBar } from "./components";
 
