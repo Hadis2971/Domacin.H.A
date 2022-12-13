@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { StateContext } from "../../state";
+
 import {
   PageContentContainer,
   PageTitleDescription,
@@ -8,6 +11,8 @@ import {
 import "./index.scss";
 
 export default () => {
+  const { products, articles } = useContext(StateContext);
+
   return (
     <PageContentContainer homePage>
       <PageTitleDescription
@@ -20,68 +25,16 @@ export default () => {
       />
 
       <div id="products-list">
-        <Product
-          title="Bombice mix – Unikatni poklon"
-          description="Čarobno srce – Unikatni pokloni – handmade je divan trik koji mami osmijeh i budi najljepše osjećaje. Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
-          price={50}
-          skuCode="dom-sit-387-0006-ba"
-          productCategory="Sitni Kolac"
-          productMarks={["Bombice - mix, Kolaci, Slatko"]}
-        />
-
-        <Product
-          title="Bombice mix – Unikatni poklon"
-          description="Čarobno srce – Unikatni pokloni – handmade je divan trik koji mami osmijeh i budi najljepše osjećaje. Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
-          price={50}
-          skuCode="dom-sit-387-0006-ba"
-          productCategory="Sitni Kolac"
-          productMarks={["Bombice - mix, Kolaci, Slatko"]}
-        />
-
-        <Product
-          title="Bombice mix – Unikatni poklon"
-          description="Čarobno srce – Unikatni pokloni – handmade je divan trik koji mami osmijeh i budi najljepše osjećaje. Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
-          price={50}
-          skuCode="dom-sit-387-0006-ba"
-          productCategory="Sitni Kolac"
-          productMarks={["Bombice - mix, Kolaci, Slatko"]}
-        />
-
-        <Product
-          title="Bombice mix – Unikatni poklon"
-          description="Čarobno srce – Unikatni pokloni – handmade je divan trik koji mami osmijeh i budi najljepše osjećaje. Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
-          price={50}
-          skuCode="dom-sit-387-0006-ba"
-          productCategory="Sitni Kolac"
-          productMarks={["Bombice - mix, Kolaci, Slatko"]}
-        />
-
-        <Product
-          title="Bombice mix – Unikatni poklon"
-          description="Čarobno srce – Unikatni pokloni – handmade je divan trik koji mami osmijeh i budi najljepše osjećaje. Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
-          price={50}
-          skuCode="dom-sit-387-0006-ba"
-          productCategory="Sitni Kolac"
-          productMarks={["Bombice - mix, Kolaci, Slatko"]}
-        />
-
-        <Product
-          title="Bombice mix – Unikatni poklon"
-          description="Čarobno srce – Unikatni pokloni – handmade je divan trik koji mami osmijeh i budi najljepše osjećaje. Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
-          price={50}
-          skuCode="dom-sit-387-0006-ba"
-          productCategory="Sitni Kolac"
-          productMarks={["Bombice - mix, Kolaci, Slatko"]}
-        />
-
-        <Product
-          title="Bombice mix – Unikatni poklon"
-          description="Čarobno srce – Unikatni pokloni – handmade je divan trik koji mami osmijeh i budi najljepše osjećaje. Posebno dizajniran za sve one koji vole ili su voljeni, a sa ciljem da zaustavi govor i izazove lavinu poljubaca i zagrljaja. Miris čokolade povećava theta moždane valove koji izazivaju opuštanje. Zato opustite se i naručite slatki grijeh!"
-          price={50}
-          skuCode="dom-sit-387-0006-ba"
-          productCategory="Sitni Kolac"
-          productMarks={["Bombice - mix, Kolaci, Slatko"]}
-        />
+        {products.map((product) => (
+          <Product
+            title={product.title}
+            description={product.description}
+            price={product.price}
+            skuCode={product.skuCode}
+            productCategory={product.productCategory}
+            productMarks={product.productMarks}
+          />
+        ))}
       </div>
 
       <div id="home-page-articles-list">
@@ -95,26 +48,14 @@ export default () => {
         />
 
         <div id="home-page-articles-container">
-          <Article
-            imgSrc="https://t4.ftcdn.net/jpg/03/00/85/23/360_F_300852364_qSrtNxY6pokaVR7er7knpb8AyYJSxtUd.jpg"
-            title="Najnovije vijseti"
-            description="Najbolji izbor nameštaja za Vas!  Pre nego što se odlučite za odgovarajuću vrstu nameštaja, važno je da sagledate prostor koji imate na raspolaganju i šta želite odabirom odgovarajućeg nameštaja da postignete.  Nameštaj je ogledalo doma i bitno je da se"
-            column
-          />
-
-          <Article
-            imgSrc="https://t4.ftcdn.net/jpg/03/00/85/23/360_F_300852364_qSrtNxY6pokaVR7er7knpb8AyYJSxtUd.jpg"
-            title="Najnovije vijseti"
-            description="Najbolji izbor nameštaja za Vas!  Pre nego što se odlučite za odgovarajuću vrstu nameštaja, važno je da sagledate prostor koji imate na raspolaganju i šta želite odabirom odgovarajućeg nameštaja da postignete.  Nameštaj je ogledalo doma i bitno je da se"
-            column
-          />
-
-          <Article
-            imgSrc="https://t4.ftcdn.net/jpg/03/00/85/23/360_F_300852364_qSrtNxY6pokaVR7er7knpb8AyYJSxtUd.jpg"
-            title="Najnovije vijseti"
-            description="Najbolji izbor nameštaja za Vas!  Pre nego što se odlučite za odgovarajuću vrstu nameštaja, važno je da sagledate prostor koji imate na raspolaganju i šta želite odabirom odgovarajućeg nameštaja da postignete.  Nameštaj je ogledalo doma i bitno je da se"
-            column
-          />
+          {articles.map((article) => (
+            <Article
+              imgSrc={article.imgSrc}
+              title={article.title}
+              description={article.description}
+              column
+            />
+          ))}
         </div>
       </div>
     </PageContentContainer>

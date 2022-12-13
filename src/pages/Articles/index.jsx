@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { StateContext } from "../../state";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -14,6 +16,8 @@ import {
 import "./index.scss";
 
 export default () => {
+  const { articles } = useContext(StateContext);
+
   return (
     <>
       <PageTitleDescription
@@ -26,11 +30,14 @@ export default () => {
         <Container>
           <Row className="pt-10">
             <Col md={7} sm={12}>
-              <Article
-                imgSrc="https://t4.ftcdn.net/jpg/03/00/85/23/360_F_300852364_qSrtNxY6pokaVR7er7knpb8AyYJSxtUd.jpg"
-                title="Najnovije vijseti"
-                description="Najbolji izbor nameštaja za Vas!  Pre nego što se odlučite za odgovarajuću vrstu nameštaja, važno je da sagledate prostor koji imate na raspolaganju i šta želite odabirom odgovarajućeg nameštaja da postignete.  Nameštaj je ogledalo doma i bitno je da se"
-              />
+              {articles.map((article) => (
+                <Article
+                  imgSrc={article.imgSrc}
+                  title={article.title}
+                  description={article.description}
+                  column
+                />
+              ))}
             </Col>
             <Col md={5} sm={12} className="articles-side">
               <div>
