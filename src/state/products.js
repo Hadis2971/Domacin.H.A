@@ -7,6 +7,8 @@ export default [
     skuCode: "dom-sit-387-0006-ba",
     productCategory: "Sitni Kolac",
     productMarks: ["Bombice - mix, Kolaci, Slatko"],
+    imageSrc:
+      "https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179",
   },
   {
     title: "Bombice mix – Unikatni poklon",
@@ -15,6 +17,8 @@ export default [
     skuCode: "dom-sit-387-0006-ba",
     productCategory: "Sitni Kolac",
     productMarks: ["Bombice - mix, Kolaci, Slatko"],
+    imageSrc:
+      "https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179",
   },
   {
     title: "Bombice mix – Unikatni poklon",
@@ -23,6 +27,8 @@ export default [
     skuCode: "dom-sit-387-0006-ba",
     productCategory: "Sitni Kolac",
     productMarks: ["Bombice - mix, Kolaci, Slatko"],
+    imageSrc:
+      "https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179",
   },
   {
     title: "Bombice mix – Unikatni poklon",
@@ -32,5 +38,7 @@ export default [
     skuCode: "dom-sit-387-0006-ba",
     productCategory: "Sitni Kolac",
     productMarks: ["Bombice - mix, Kolaci, Slatko"],
+    imageSrc:
+      "https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179",
   },
 ];

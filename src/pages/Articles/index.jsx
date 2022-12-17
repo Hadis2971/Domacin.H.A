@@ -32,7 +32,7 @@ export default () => {
             <Col md={7} sm={12}>
               {articles.map((article) => (
                 <Article
-                  imgSrc={article.imgSrc}
+                  imageSrc={article.imageSrc}
                   title={article.title}
                   description={article.description}
                   column

@@ -1,10 +1,24 @@
 import { useState } from "react";
+import styled from "styled-components";
 
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ProductDetails from "../ProductDetails";
 
 import "./index.scss";
+
+const ProductImage = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: url(${(props) => props.imageSrc});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+`;
 
 export default ({
   title,
@@ -13,6 +27,7 @@ export default ({
   skuCode,
   productCategory,
   productMarks,
+  imageSrc,
 }) => {
   const [showDetails, setShowDetails] = useState(false);
 
@@ -20,17 +35,22 @@ export default ({
 
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img
-        variant="top"
-        src="https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179"
-      />
+      <div
+        className="product-image-container"
+        onClick={() => setShowDetails(true)}
+      >
+        <ProductImage imageSrc={imageSrc} />
+      </div>
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>
-          {description}
-          {`${price.toFixed(2)}KM`}
-        </Card.Text>
-        <Button variant="primary" onClick={() => setShowDetails(true)}>
+        <Card.Title>
+          {title} - {`${price.toFixed(2)}KM`}
+        </Card.Title>
+        <Card.Text>{description.slice(0, 100)}...</Card.Text>
+        <Button
+          variant="primary"
+          className="product-btn"
+          onClick={() => setShowDetails(true)}
+        >
           Detalji
         </Button>
       </Card.Body>

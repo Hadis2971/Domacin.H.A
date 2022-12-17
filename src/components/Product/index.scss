@@ -6,10 +6,34 @@
   align-items: center;
 }
 
+.card-body {
+  position: relative;
+  height: 200px;
+}
+
 .card-title {
   color: $base-title-color;
 }
 
 .card-text {
   color: #999999;
+}
+
+.product-image-container {
+  width: 286px;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.product-image-container:hover div,
+.product-image-container:focus div {
+  transform: scale(1.2);
+}
+
+.product-btn {
+  position: absolute;
+  bottom: 10px;
 }

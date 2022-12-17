@@ -25,6 +25,7 @@ export default () => {
               skuCode={product.skuCode}
               productCategory={product.productCategory}
               productMarks={product.productMarks}
+              imageSrc={product.imageSrc}
             />
           ))}
         </div>

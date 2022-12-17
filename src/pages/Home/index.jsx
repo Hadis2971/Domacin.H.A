@@ -33,6 +33,7 @@ export default () => {
             skuCode={product.skuCode}
             productCategory={product.productCategory}
             productMarks={product.productMarks}
+            imageSrc={product.imageSrc}
           />
         ))}
       </div>
@@ -50,7 +51,7 @@ export default () => {
         <div id="home-page-articles-container">
           {articles.map((article) => (
             <Article
-              imgSrc={article.imgSrc}
+              imageSrc={article.imageSrc}
               title={article.title}
               description={article.description}
               column

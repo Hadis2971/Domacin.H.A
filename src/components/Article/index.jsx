@@ -1,7 +1,5 @@
 import styled from "styled-components";
-
 import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
 
 import "./index.scss";
 
@@ -13,16 +11,29 @@ const ArticleBody = styled.div`
   flex-direction: ${(props) => (props.column ? "column" : "initial")};
 `;
 
-function Article({ imgSrc, title, description, column }) {
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: url(${(props) => props.imageSrc});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+`;
+
+function Article({ imageSrc, title, description, column }) {
   return (
     <div className="article-container">
       <ArticleBody column={column}>
         <div className="image-container">
-          <Image src={imgSrc} fluidrounded className="image" />
+          <ImageContainer imageSrc={imageSrc} className="image" />
         </div>
         <div className="mt-3">
           <h5>{title}</h5>
-          <p>{description}</p>
+          <p>{description.slice(0, 100)}...</p>
         </div>
       </ArticleBody>
       <div className="article-footer">
