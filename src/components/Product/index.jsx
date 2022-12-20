@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import styled from "styled-components";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ProductDetails from "../ProductDetails";
+
+import { addShoppingItems } from "../../state/shoppingItems";
 
 import "./index.scss";
 
@@ -33,6 +36,20 @@ export default ({
 
   const closeDetails = () => setShowDetails(false);
 
+  const addItems = useCallback(
+    () =>
+      addShoppingItems({
+        title,
+        description,
+        price,
+        skuCode,
+        productCategory,
+        productMarks,
+        imageSrc,
+      }),
+    []
+  );
+
   return (
     <Card style={{ width: "18rem" }}>
       <div
@@ -46,13 +63,17 @@ export default ({
           {title} - {`${price.toFixed(2)}KM`}
         </Card.Title>
         <Card.Text>{description.slice(0, 100)}...</Card.Text>
-        <Button
-          variant="primary"
-          className="product-btn"
-          onClick={() => setShowDetails(true)}
-        >
-          Detalji
-        </Button>
+        <div className="product-footer">
+          <Button
+            variant="primary"
+            className="product-btn"
+            onClick={() => setShowDetails(true)}
+          >
+            Detalji
+          </Button>
+
+          <FontAwesomeIcon icon={faShoppingCart} onClick={addItems} />
+        </div>
       </Card.Body>
 
       <ProductDetails

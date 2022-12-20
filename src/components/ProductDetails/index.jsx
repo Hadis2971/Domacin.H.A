@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -8,6 +8,8 @@ import Modal from "react-bootstrap/Modal";
 import Image from "react-bootstrap/Image";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+
+import { addMultipleSameShoppingItems } from "../../state/shoppingItems";
 
 import "./index.scss";
 
@@ -23,6 +25,28 @@ export default ({
   close,
 }) => {
   const [showDescription, setShowDescription] = useState(false);
+  const [numberOfProduct, setNumberOfProduct] = useState(1);
+
+  const changeNumberOfProduct = useCallback((evt) => {
+    if (evt.target.value - 0 <= 0) return;
+
+    setNumberOfProduct(evt.target.value - 0);
+  }, []);
+
+  const addItems = useCallback(() => {
+    addMultipleSameShoppingItems(
+      {
+        title,
+        description,
+        price,
+        imgSrc,
+        skuCode,
+        productCategory,
+        productMarks,
+      },
+      numberOfProduct
+    );
+  }, []);
 
   return (
     <Modal
@@ -47,8 +71,12 @@ export default ({
             <Col md={5} sm={12}>
               <Form>
                 <InputGroup>
-                  <Form.Control type="number" />
-                  <Button>Dodaj</Button>
+                  <Form.Control
+                    type="number"
+                    value={numberOfProduct}
+                    onChange={changeNumberOfProduct}
+                  />
+                  <Button onClick={addItems}>Dodaj</Button>
                 </InputGroup>
               </Form>
               <div className="mt-3">
