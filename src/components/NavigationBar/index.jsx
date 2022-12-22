@@ -2,10 +2,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import "./index.scss";
 
-export default () => {
+export default ({ toggleDisplaySlideShoppingList }) => {
   return (
     <Navbar bg="light" expand="lg" fixed="top">
       <Container>
@@ -29,9 +31,16 @@ export default () => {
               Clanci
             </Link>
 
-            <Link className="nav-link" to="/shop">
+            <Link className="nav-link" to="">
               Arhiva
             </Link>
+          </Nav>
+
+          <Nav>
+            <FontAwesomeIcon
+              icon={faShoppingCart}
+              onClick={toggleDisplaySlideShoppingList}
+            />
           </Nav>
         </Navbar.Collapse>
       </Container>

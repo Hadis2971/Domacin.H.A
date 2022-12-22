@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { StateContext } from "../../state";
+import React from "react";
 
 import {
   PageContentContainer,
@@ -9,24 +8,31 @@ import {
 
 import "./index.scss";
 
-export default () => {
-  const { products } = useContext(StateContext);
-
+export default ({
+  products,
+  addShoppingItems,
+  addMultipleSameShoppingItems,
+}) => {
   return (
     <>
       <PageTitleDescription title="Shop" bgColor="#a81d84" titleColor="#FFF" />
       <PageContentContainer>
         <div id="shop-products-list">
           {products.map((product) => (
-            <Product
-              title={product.title}
-              description={product.description}
-              price={product.price}
-              skuCode={product.skuCode}
-              productCategory={product.productCategory}
-              productMarks={product.productMarks}
-              imageSrc={product.imageSrc}
-            />
+            <React.Fragment key={product.id}>
+              <Product
+                id={product.id}
+                title={product.title}
+                description={product.description}
+                price={product.price}
+                skuCode={product.skuCode}
+                productCategory={product.productCategory}
+                productMarks={product.productMarks}
+                imageSrc={product.imageSrc}
+                addShoppingItems={addShoppingItems}
+                addMultipleSameShoppingItems={addMultipleSameShoppingItems}
+              />
+            </React.Fragment>
           ))}
         </div>
       </PageContentContainer>

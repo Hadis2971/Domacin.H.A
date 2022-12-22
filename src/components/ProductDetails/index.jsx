@@ -9,12 +9,11 @@ import Image from "react-bootstrap/Image";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
-import { addMultipleSameShoppingItems } from "../../state/shoppingItems";
-
 import "./index.scss";
 
 export default ({
   show,
+  id,
   title,
   description,
   price,
@@ -22,6 +21,7 @@ export default ({
   skuCode,
   productCategory,
   productMarks,
+  addMultipleSameShoppingItems,
   close,
 }) => {
   const [showDescription, setShowDescription] = useState(false);
@@ -36,6 +36,7 @@ export default ({
   const addItems = useCallback(() => {
     addMultipleSameShoppingItems(
       {
+        id,
         title,
         description,
         price,
@@ -46,7 +47,7 @@ export default ({
       },
       numberOfProduct
     );
-  }, []);
+  }, [numberOfProduct]);
 
   return (
     <Modal
@@ -82,8 +83,8 @@ export default ({
               <div className="mt-3">
                 <div>{`SKU: ${skuCode}`}</div>
                 <div>{`Kategorija: ${productCategory}`}</div>
-                <div>{`Oznake: ${productMarks.map((pm) => (
-                  <span>{`${pm}, `}</span>
+                <div>{`Oznake: ${productMarks.map((pm, idx) => (
+                  <span key={idx}>{`${pm}, `}</span>
                 ))}`}</div>
               </div>
             </Col>

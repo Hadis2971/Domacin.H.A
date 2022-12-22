@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { StateContext } from "../../state";
+import React from "react";
 
 import {
   PageContentContainer,
@@ -10,9 +9,12 @@ import {
 
 import "./index.scss";
 
-export default () => {
-  const { products, articles } = useContext(StateContext);
-
+export default ({
+  products,
+  articles,
+  addShoppingItems,
+  addMultipleSameShoppingItems,
+}) => {
   return (
     <PageContentContainer homePage>
       <PageTitleDescription
@@ -26,15 +28,20 @@ export default () => {
 
       <div id="products-list">
         {products.map((product) => (
-          <Product
-            title={product.title}
-            description={product.description}
-            price={product.price}
-            skuCode={product.skuCode}
-            productCategory={product.productCategory}
-            productMarks={product.productMarks}
-            imageSrc={product.imageSrc}
-          />
+          <React.Fragment key={product.id}>
+            <Product
+              id={product.id}
+              title={product.title}
+              description={product.description}
+              price={product.price}
+              skuCode={product.skuCode}
+              productCategory={product.productCategory}
+              productMarks={product.productMarks}
+              imageSrc={product.imageSrc}
+              addShoppingItems={addShoppingItems}
+              addMultipleSameShoppingItems={addMultipleSameShoppingItems}
+            />
+          </React.Fragment>
         ))}
       </div>
 
@@ -50,12 +57,14 @@ export default () => {
 
         <div id="home-page-articles-container">
           {articles.map((article) => (
-            <Article
-              imageSrc={article.imageSrc}
-              title={article.title}
-              description={article.description}
-              column
-            />
+            <React.Fragment key={article.id}>
+              <Article
+                imageSrc={article.imageSrc}
+                title={article.title}
+                description={article.description}
+                column
+              />
+            </React.Fragment>
           ))}
         </div>
       </div>

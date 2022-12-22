@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { StateContext } from "../../state";
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -15,9 +14,7 @@ import {
 
 import "./index.scss";
 
-export default () => {
-  const { articles } = useContext(StateContext);
-
+export default ({ articles }) => {
   return (
     <>
       <PageTitleDescription
@@ -31,12 +28,14 @@ export default () => {
           <Row className="pt-10">
             <Col md={7} sm={12}>
               {articles.map((article) => (
-                <Article
-                  imageSrc={article.imageSrc}
-                  title={article.title}
-                  description={article.description}
-                  column
-                />
+                <React.Fragment key={article.id}>
+                  <Article
+                    imageSrc={article.imageSrc}
+                    title={article.title}
+                    description={article.description}
+                    column
+                  />
+                </React.Fragment>
               ))}
             </Col>
             <Col md={5} sm={12} className="articles-side">

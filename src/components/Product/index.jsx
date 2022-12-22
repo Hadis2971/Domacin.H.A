@@ -6,8 +6,6 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ProductDetails from "../ProductDetails";
 
-import { addShoppingItems } from "../../state/shoppingItems";
-
 import "./index.scss";
 
 const ProductImage = styled.div`
@@ -24,6 +22,7 @@ const ProductImage = styled.div`
 `;
 
 export default ({
+  id,
   title,
   description,
   price,
@@ -31,6 +30,8 @@ export default ({
   productCategory,
   productMarks,
   imageSrc,
+  addShoppingItems,
+  addMultipleSameShoppingItems,
 }) => {
   const [showDetails, setShowDetails] = useState(false);
 
@@ -39,6 +40,7 @@ export default ({
   const addItems = useCallback(
     () =>
       addShoppingItems({
+        id,
         title,
         description,
         price,
@@ -78,7 +80,7 @@ export default ({
 
       <ProductDetails
         show={showDetails}
-        close={closeDetails}
+        id={id}
         title={title}
         description={description}
         price={price}
@@ -86,6 +88,8 @@ export default ({
         productCategory={productCategory}
         productMarks={productMarks}
         imgSrc="https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179"
+        addMultipleSameShoppingItems={addMultipleSameShoppingItems}
+        close={closeDetails}
       />
     </Card>
   );

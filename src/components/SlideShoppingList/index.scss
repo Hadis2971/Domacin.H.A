@@ -1,0 +1,90 @@
+@import "../../index.scss";
+
+.slide-shopping-list {
+  position: fixed;
+  width: 23%;
+  height: 100vh;
+  z-index: 1000;
+  top: 50px;
+  border-left: $base-text-buttons-color;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+
+  @media (max-width: 1280px) {
+    width: 70%;
+  }
+
+  #header {
+    text-align: center;
+    background-color: $base-text-buttons-color;
+    color: #fff;
+    padding: 10px 0px;
+
+    h4 {
+      margin-bottom: 15px;
+    }
+
+    h5 {
+      margin-bottom: 0px;
+    }
+  }
+
+  #list {
+    background-color: #fff;
+    padding: 20px;
+    height: 100vh;
+    font-size: 1em;
+
+    .items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      color: $base-text-buttons-color;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $base-text-buttons-color;
+
+      .title {
+        width: 70%;
+        box-sizing: border-box;
+        word-break: break-all;
+      }
+
+      .controls {
+        width: 30%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        svg {
+          cursor: pointer;
+          font-size: 0.83em;
+        }
+
+        .svg-inline--fa.fa-angle-left.arrow-icon {
+          font-size: 0.9em;
+        }
+
+        .svg-inline--fa.fa-angle-right.arrow-icon {
+          font-size: 0.9em;
+        }
+
+        .delete-icon {
+          color: $base-description-color;
+          -webkit-transition: all 0.5s;
+          -moz-transition: all 0.5s;
+          -o-transition: all 0.5s;
+          transition: all 0.5s;
+        }
+
+        .delete-icon:hover {
+          color: crimson;
+        }
+      }
+    }
+  }
+}
