@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -5,9 +6,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
+import { StateContext } from "../../state";
+
 import "./index.scss";
 
 export default ({ toggleDisplaySlideShoppingList }) => {
+  const { shoppingItems } = useContext(StateContext);
+
   return (
     <Navbar bg="light" expand="lg" fixed="top">
       <Container>
@@ -36,11 +41,12 @@ export default ({ toggleDisplaySlideShoppingList }) => {
             </Link>
           </Nav>
 
-          <Nav>
+          <Nav className="shopping-cart">
             <FontAwesomeIcon
               icon={faShoppingCart}
               onClick={toggleDisplaySlideShoppingList}
             />
+            {`( ${shoppingItems.length} )`}
           </Nav>
         </Navbar.Collapse>
       </Container>
