@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleLeft,
@@ -6,12 +6,11 @@ import {
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { StateContext } from "../../state";
+
 import "./index.scss";
-export default ({
-  displaySlideShoppingList,
-  shoppingItems,
-  getShoppingItemsList,
-}) => {
+export default ({ displaySlideShoppingList }) => {
+  const { shoppingItems, getShoppingItemsList } = useContext(StateContext);
   const listToDisplay = getShoppingItemsList(shoppingItems);
 
   return (

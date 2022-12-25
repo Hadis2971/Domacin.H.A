@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { StateContext } from "../../state";
 
 import {
   PageContentContainer,
@@ -8,11 +10,12 @@ import {
 
 import "./index.scss";
 
-export default ({
-  products,
-  addShoppingItems,
-  addMultipleSameShoppingItems,
-}) => {
+export default () => {
+  console.log("SHOP RENDER");
+
+  const { products, addShoppingItems, addMultipleSameShoppingItems } =
+    useContext(StateContext);
+
   return (
     <>
       <PageTitleDescription title="Shop" bgColor="#a81d84" titleColor="#FFF" />

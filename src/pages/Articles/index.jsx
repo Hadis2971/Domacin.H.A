@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+
+import { StateContext } from "../../state";
 
 import {
   PageContentContainer,
@@ -14,7 +16,10 @@ import {
 
 import "./index.scss";
 
-export default ({ articles }) => {
+export default () => {
+  console.log("ARTICLES RENDER");
+  const { articles } = useContext(StateContext);
+
   return (
     <>
       <PageTitleDescription

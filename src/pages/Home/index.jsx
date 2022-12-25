@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { StateContext } from "../../state";
 
 import {
   PageContentContainer,
@@ -9,12 +11,11 @@ import {
 
 import "./index.scss";
 
-export default ({
-  products,
-  articles,
-  addShoppingItems,
-  addMultipleSameShoppingItems,
-}) => {
+export default () => {
+  console.log("HOME RENDER");
+  const { products, articles, addShoppingItems, addMultipleSameShoppingItems } =
+    useContext(StateContext);
+
   return (
     <PageContentContainer homePage>
       <PageTitleDescription
