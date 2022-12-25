@@ -17,15 +17,44 @@ export default ({ children }) => {
     [setShoppingItems]
   );
 
-  useEffect(() => {
-    sessionStorage.setItem("shoppingItems", JSON.stringify(shoppingItems));
-  }, [shoppingItems.length]);
-
   const addMultipleSameShoppingItems = (item, multiplier) => {
     for (let i = 0; i < multiplier; i++) {
       addShoppingItems(item);
     }
   };
+
+  const increaseByOneProduct = useCallback(
+    (item) => {
+      addShoppingItems(item);
+    },
+    [setShoppingItems]
+  );
+
+  const decreaseByOneProduct = useCallback(
+    (id) => {
+      const idx = shoppingItems.findIndex((item) => item.id === id);
+      if (idx > -1) shoppingItems.splice(idx, 1);
+      else return;
+
+      setShoppingItems([...shoppingItems]);
+    },
+    [shoppingItems, setShoppingItems]
+  );
+
+  const deleteProduct = useCallback(
+    (id) => {
+      console.log("id", id, typeof id);
+      console.log("shoppingItems", shoppingItems);
+      const filteredProducts = shoppingItems.filter((item) => item.id !== id);
+      console.log("filteredProducts", filteredProducts);
+      setShoppingItems(filteredProducts);
+    },
+    [setShoppingItems]
+  );
+
+  useEffect(() => {
+    sessionStorage.setItem("shoppingItems", JSON.stringify(shoppingItems));
+  }, [shoppingItems.length]);
 
   const getShoppingItemsList = (items) => {
     const list = {};
@@ -46,6 +75,9 @@ export default ({ children }) => {
       shoppingItems,
       addShoppingItems,
       addMultipleSameShoppingItems,
+      increaseByOneProduct,
+      decreaseByOneProduct,
+      deleteProduct,
       getShoppingItemsList,
     }),
     [
@@ -54,6 +86,9 @@ export default ({ children }) => {
       shoppingItems.length,
       addShoppingItems,
       addMultipleSameShoppingItems,
+      increaseByOneProduct,
+      decreaseByOneProduct,
+      deleteProduct,
       getShoppingItemsList,
     ]
   );

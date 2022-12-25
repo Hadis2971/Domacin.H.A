@@ -10,7 +10,13 @@ import { StateContext } from "../../state";
 
 import "./index.scss";
 export default ({ displaySlideShoppingList }) => {
-  const { shoppingItems, getShoppingItemsList } = useContext(StateContext);
+  const {
+    shoppingItems,
+    getShoppingItemsList,
+    increaseByOneProduct,
+    decreaseByOneProduct,
+    deleteProduct,
+  } = useContext(StateContext);
   const listToDisplay = getShoppingItemsList(shoppingItems);
 
   return (
@@ -28,10 +34,24 @@ export default ({ displaySlideShoppingList }) => {
           <div className="items" key={key}>
             <div className="title">{listToDisplay[key][0].title}</div>
             <div className="controls">
-              <FontAwesomeIcon icon={faAngleLeft} className="arrow-icon" />
+              <FontAwesomeIcon
+                icon={faAngleLeft}
+                className="arrow-icon"
+                onClick={() => decreaseByOneProduct(Number(key))}
+              />
               <div>Kolicina: {listToDisplay[key].length}</div>
-              <FontAwesomeIcon icon={faAngleRight} className="arrow-icon" />
-              <FontAwesomeIcon icon={faTrashCan} className="delete-icon" />
+              <FontAwesomeIcon
+                icon={faAngleRight}
+                className="arrow-icon"
+                onClick={() =>
+                  increaseByOneProduct({ ...listToDisplay[key][0] })
+                }
+              />
+              <FontAwesomeIcon
+                icon={faTrashCan}
+                className="delete-icon"
+                onClick={() => deleteProduct(Number(key))}
+              />
             </div>
           </div>
         )) || null}

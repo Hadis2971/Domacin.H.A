@@ -2,7 +2,7 @@
 
 .slide-shopping-list {
   position: fixed;
-  width: 23%;
+  width: 25%;
   height: 100vh;
   z-index: 1000;
   top: 50px;
@@ -74,6 +74,7 @@
         }
 
         .delete-icon {
+          margin-left: 10px;
           color: $base-description-color;
           -webkit-transition: all 0.5s;
           -moz-transition: all 0.5s;
