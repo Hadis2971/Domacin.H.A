@@ -43,10 +43,7 @@ export default ({ children }) => {
 
   const deleteProduct = useCallback(
     (id) => {
-      console.log("id", id, typeof id);
-      console.log("shoppingItems", shoppingItems);
       const filteredProducts = shoppingItems.filter((item) => item.id !== id);
-      console.log("filteredProducts", filteredProducts);
       setShoppingItems(filteredProducts);
     },
     [setShoppingItems]

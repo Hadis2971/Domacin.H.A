@@ -13,14 +13,19 @@ function App() {
   const [displaySlideShoppingList, setDisplaySlideShoppingList] =
     useState(false);
 
-  const toggleDisplaySlideShoppingList = () =>
+  const toggleDisplaySlideShoppingList = (evt) => {
+    evt.stopPropagation();
     setDisplaySlideShoppingList(
       (displaySlideShoppingList) => !displaySlideShoppingList
     );
+  };
 
   return (
     <StateContextProvider>
-      <SlideShoppingList displaySlideShoppingList={displaySlideShoppingList} />
+      <SlideShoppingList
+        displaySlideShoppingList={displaySlideShoppingList}
+        setDisplaySlideShoppingList={setDisplaySlideShoppingList}
+      />
 
       <div id="app-container">
         <NavBar

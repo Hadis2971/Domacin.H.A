@@ -33,21 +33,25 @@ export default ({
     setNumberOfProduct(evt.target.value - 0);
   }, []);
 
-  const addItems = useCallback(() => {
-    addMultipleSameShoppingItems(
-      {
-        id,
-        title,
-        description,
-        price,
-        imgSrc,
-        skuCode,
-        productCategory,
-        productMarks,
-      },
-      numberOfProduct
-    );
-  }, [numberOfProduct]);
+  const addItems = useCallback(
+    (evt) => {
+      evt.stopPropagation();
+      addMultipleSameShoppingItems(
+        {
+          id,
+          title,
+          description,
+          price,
+          imgSrc,
+          skuCode,
+          productCategory,
+          productMarks,
+        },
+        numberOfProduct
+      );
+    },
+    [numberOfProduct]
+  );
 
   return (
     <Modal

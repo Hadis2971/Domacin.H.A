@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleLeft,
@@ -9,7 +9,7 @@ import {
 import { StateContext } from "../../state";
 
 import "./index.scss";
-export default ({ displaySlideShoppingList }) => {
+export default ({ displaySlideShoppingList, setDisplaySlideShoppingList }) => {
   const {
     shoppingItems,
     getShoppingItemsList,
@@ -19,8 +19,25 @@ export default ({ displaySlideShoppingList }) => {
   } = useContext(StateContext);
   const listToDisplay = getShoppingItemsList(shoppingItems);
 
+  useEffect(() => {
+    const closeOnDocumentClickEvent = new Event("close-on-document-click");
+
+    document.addEventListener(
+      "close-on-document-click",
+      () => {
+        setDisplaySlideShoppingList(false);
+      },
+      false
+    );
+
+    document.addEventListener("click", (evt) => {
+      document.dispatchEvent(closeOnDocumentClickEvent);
+    });
+  }, []);
+
   return (
     <div
+      id="slide-shopping-list-id"
       className="slide-shopping-list"
       style={displaySlideShoppingList ? { right: "0px" } : { right: "-3000px" }}
     >

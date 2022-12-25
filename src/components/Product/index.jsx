@@ -37,20 +37,19 @@ export default ({
 
   const closeDetails = () => setShowDetails(false);
 
-  const addItems = useCallback(
-    () =>
-      addShoppingItems({
-        id,
-        title,
-        description,
-        price,
-        skuCode,
-        productCategory,
-        productMarks,
-        imageSrc,
-      }),
-    []
-  );
+  const addItems = useCallback((evt) => {
+    evt.stopPropagation();
+    addShoppingItems({
+      id,
+      title,
+      description,
+      price,
+      skuCode,
+      productCategory,
+      productMarks,
+      imageSrc,
+    });
+  }, []);
 
   return (
     <Card style={{ width: "18rem" }}>

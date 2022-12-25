@@ -11,8 +11,6 @@ import {
 import "./index.scss";
 
 export default () => {
-  console.log("SHOP RENDER");
-
   const { products, addShoppingItems, addMultipleSameShoppingItems } =
     useContext(StateContext);
 

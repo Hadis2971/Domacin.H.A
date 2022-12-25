@@ -12,7 +12,6 @@ import {
 import "./index.scss";
 
 export default () => {
-  console.log("HOME RENDER");
   const { products, articles, addShoppingItems, addMultipleSameShoppingItems } =
     useContext(StateContext);
 

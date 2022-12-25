@@ -17,7 +17,6 @@ import {
 import "./index.scss";
 
 export default () => {
-  console.log("ARTICLES RENDER");
   const { articles } = useContext(StateContext);
 
   return (
