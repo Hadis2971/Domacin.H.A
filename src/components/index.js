@@ -5,3 +5,5 @@ export { default as Product } from "./Product";
 export { default as Article } from "./Article";
 export { default as ProductDetails } from "./ProductDetails";
 export { default as SlideShoppingList } from "./SlideShoppingList";
+export { default as SuspenseImage } from "./SuspenseImage";
+export { default as GridLoaderSuspense } from "./GridLoaderSuspense";

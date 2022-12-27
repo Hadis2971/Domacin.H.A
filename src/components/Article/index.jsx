@@ -1,5 +1,9 @@
+import { Suspense } from "react";
 import styled from "styled-components";
 import Button from "react-bootstrap/Button";
+import GridLoaderSuspense from "../GridLoaderSuspense";
+
+import SuspenseImage from "../SuspenseImage";
 
 import "./index.scss";
 
@@ -45,7 +49,12 @@ function Article({ imageSrc, title, description, column }) {
     <div className="article-container">
       <ArticleBody column={column}>
         <ArticleImageContainer column={column}>
-          <ArticleImage imageSrc={imageSrc} className="image" />
+          <GridLoaderSuspense>
+            <SuspenseImage
+              src={imageSrc}
+              image={<ArticleImage imageSrc={imageSrc} className="image" />}
+            />
+          </GridLoaderSuspense>
         </ArticleImageContainer>
         <div className="mt-3">
           <h5>{title}</h5>

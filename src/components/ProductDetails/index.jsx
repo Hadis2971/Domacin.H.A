@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, Suspense } from "react";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -8,6 +8,9 @@ import Modal from "react-bootstrap/Modal";
 import Image from "react-bootstrap/Image";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+
+import SuspenseImage from "../SuspenseImage";
+import GridLoaderSuspense from "../GridLoaderSuspense";
 
 import "./index.scss";
 
@@ -71,7 +74,12 @@ export default ({
         <Container>
           <Row>
             <Col md={7} sm={12}>
-              <Image fluid src={imgSrc} />
+              <GridLoaderSuspense>
+                <SuspenseImage
+                  src={imgSrc}
+                  image={<Image fluid src={imgSrc} />}
+                />
+              </GridLoaderSuspense>
             </Col>
             <Col md={5} sm={12}>
               <Form>

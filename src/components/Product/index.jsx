@@ -4,7 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import GridLoaderSuspense from "../GridLoaderSuspense";
+
 import ProductDetails from "../ProductDetails";
+import SuspenseImage from "../SuspenseImage";
 
 import "./index.scss";
 
@@ -57,7 +60,12 @@ export default ({
         className="product-image-container"
         onClick={() => setShowDetails(true)}
       >
-        <ProductImage imageSrc={imageSrc} />
+        <GridLoaderSuspense>
+          <SuspenseImage
+            src={imageSrc}
+            image={<ProductImage imageSrc={imageSrc} />}
+          />
+        </GridLoaderSuspense>
       </div>
       <Card.Body>
         <Card.Title>
