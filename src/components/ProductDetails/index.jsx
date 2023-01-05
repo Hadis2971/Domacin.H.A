@@ -93,11 +93,18 @@ export default ({
                 </InputGroup>
               </Form>
               <div className="mt-3">
-                <div>{`SKU: ${skuCode}`}</div>
-                <div>{`Kategorija: ${productCategory}`}</div>
-                <div>{`Oznake: ${productMarks.map((pm, idx) => (
-                  <span key={idx}>{`${pm}, `}</span>
-                ))}`}</div>
+                <div>
+                  SKU: <span className="details">{skuCode}</span>
+                </div>
+                <div>
+                  Kategorija: <span className="details">{productCategory}</span>
+                </div>
+                <div>
+                  Oznake:{" "}
+                  {productMarks.map((pm, idx) => (
+                    <span className="details" key={idx}>{`${pm}, `}</span>
+                  ))}
+                </div>
               </div>
             </Col>
           </Row>

@@ -9,7 +9,14 @@
 }
 
 .shopping-cart {
+  display: flex;
+  align-items: center;
   color: $base-text-buttons-color;
+
+  span {
+    font-size: 1.3em;
+    margin-left: 5px;
+  }
 
   svg {
     font-size: 1.5em;

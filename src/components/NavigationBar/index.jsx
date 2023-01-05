@@ -36,9 +36,15 @@ export default ({ toggleDisplaySlideShoppingList }) => {
               Clanci
             </Link>
 
-            <Link className="nav-link" to="">
-              Arhiva
-            </Link>
+            <div>
+              <a
+                className="nav-link"
+                href="https://www.blog.domacin.ba/"
+                target="_blank"
+              >
+                Arhiva
+              </a>
+            </div>
           </Nav>
 
           <Nav className="shopping-cart">
@@ -46,7 +52,7 @@ export default ({ toggleDisplaySlideShoppingList }) => {
               icon={faShoppingCart}
               onClick={toggleDisplaySlideShoppingList}
             />
-            {`( ${shoppingItems.length} )`}
+            <span>{`( ${shoppingItems.length} )`}</span>
           </Nav>
         </Navbar.Collapse>
       </Container>
