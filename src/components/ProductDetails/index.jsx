@@ -109,10 +109,25 @@ export default ({
             </Col>
           </Row>
 
+          <div className="description-control">
+            <div
+              className={!showDescription && "active"}
+              onClick={() => setShowDescription(false)}
+            >
+              Recenzija
+            </div>
+            <div
+              className={showDescription && "active"}
+              onClick={() => setShowDescription(true)}
+            >
+              Opis
+            </div>
+          </div>
+
           <Row>
             {showDescription ? (
               <Col sm={12}>
-                <p>{description}</p>
+                <p className="description">{description}</p>
               </Col>
             ) : (
               <Col sm={12} className="mt-3">
@@ -121,25 +136,37 @@ export default ({
                 <Form>
                   <Form.Group className="mb-3">
                     <Form.Label htmlFor="recension-title">Naziv*</Form.Label>
-                    <Form.Control
-                      type="text"
-                      id="recension-title"
-                      placeholder=""
-                    />
+                    <div className="input-container">
+                      <Form.Control
+                        className="recension-input"
+                        type="text"
+                        id="recension-title"
+                        placeholder=""
+                      />
+                    </div>
                   </Form.Group>
 
                   <Form.Group className="mb-3">
                     <Form.Label htmlFor="recension-email">Email*</Form.Label>
-                    <Form.Control
-                      type="text"
-                      id="recension-email"
-                      placeholder=""
-                    />
+                    <div className="input-container">
+                      <Form.Control
+                        className="recension-input"
+                        type="text"
+                        id="recension-email"
+                        placeholder=""
+                      />
+                    </div>
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="recension-text">
                     <Form.Label>Recenzija*</Form.Label>
-                    <Form.Control as="textarea" rows={3} />
+                    <div className="input-container">
+                      <Form.Control
+                        className="recension-input"
+                        as="textarea"
+                        rows={3}
+                      />
+                    </div>
                   </Form.Group>
 
                   <Button type="submit">Posalji</Button>

@@ -9,4 +9,85 @@
   .details {
     color: $base-text-buttons-color;
   }
+
+  .description-control {
+    margin: 20px 0px;
+
+    div {
+      display: inline-block;
+      text-align: center;
+      font-size: 1.3em;
+      cursor: pointer;
+      padding-bottom: 3px;
+      -webkit-transition: color 0.5s;
+      -moz-transition: color 0.5s;
+      -o-transition: color 0.5s;
+      transition: color 0.5s;
+    }
+
+    div:first-child {
+      margin-right: 50px;
+      width: 150px;
+    }
+
+    div:nth-child(2) {
+      width: 80px;
+    }
+
+    div:hover {
+      border-bottom: 2px solid $base-text-buttons-color;
+      border-bottom-width: thin;
+    }
+
+    div.active {
+      border-bottom: 2px solid $base-text-buttons-color;
+      border-bottom-width: thin;
+      color: $base-text-buttons-color;
+    }
+  }
+
+  .description {
+    font-size: 1.1em;
+    line-height: 1.7em;
+    color: $base-title-color;
+  }
+
+  h4 {
+    margin-bottom: 50px;
+  }
+
+  .recension-input {
+    position: relative;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0px;
+  }
+
+  .input-container {
+    position: relative;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .input-container:focus-within {
+    border-bottom: none;
+  }
+
+  .input-container:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: $base-text-buttons-color;
+    bottom: 0px;
+    left: 0px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .input-container:focus-within:after {
+    transform: scaleX(1);
+    transform-origin: center;
+  }
 }
