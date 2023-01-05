@@ -1,4 +1,4 @@
-import { useState, useCallback, Suspense } from "react";
+import { useState, useCallback } from "react";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -8,6 +8,8 @@ import Modal from "react-bootstrap/Modal";
 import Image from "react-bootstrap/Image";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import SuspenseImage from "../SuspenseImage";
 import GridLoaderSuspense from "../GridLoaderSuspense";
@@ -29,6 +31,8 @@ export default ({
 }) => {
   const [showDescription, setShowDescription] = useState(false);
   const [numberOfProduct, setNumberOfProduct] = useState(1);
+  const [numberOfStars, setNumberOfStart] = useState(0);
+  const [fixedNumberOfStars, setFixedNumberOfStars] = useState(false);
 
   const changeNumberOfProduct = useCallback((evt) => {
     if (evt.target.value - 0 <= 0) return;
@@ -55,6 +59,22 @@ export default ({
     },
     [numberOfProduct]
   );
+
+  const fixNumberOfStars = (number) => {
+    if (number === 1 && fixedNumberOfStars) {
+      setNumberOfStart(0);
+      setFixedNumberOfStars(false);
+    } else {
+      setNumberOfStart(number);
+      setFixedNumberOfStars(true);
+    }
+  };
+
+  const handleMouseLeaveStars = () => {
+    if (fixedNumberOfStars) return;
+
+    setNumberOfStart(0);
+  };
 
   return (
     <Modal
@@ -111,13 +131,13 @@ export default ({
 
           <div className="description-control">
             <div
-              className={!showDescription && "active"}
+              className={!showDescription ? "active" : null}
               onClick={() => setShowDescription(false)}
             >
               Recenzija
             </div>
             <div
-              className={showDescription && "active"}
+              className={showDescription ? "active" : null}
               onClick={() => setShowDescription(true)}
             >
               Opis
@@ -157,6 +177,45 @@ export default ({
                       />
                     </div>
                   </Form.Group>
+
+                  <div className="star-container">
+                    <div>Vasa Ocjena</div>
+                    <FontAwesomeIcon
+                      onMouseEnter={() => setNumberOfStart(1)}
+                      onMouseLeave={handleMouseLeaveStars}
+                      onClick={() => fixNumberOfStars(1)}
+                      className={`star ${numberOfStars >= 1 ? "active" : ""}`}
+                      icon={faStar}
+                    />
+                    <FontAwesomeIcon
+                      onMouseEnter={() => setNumberOfStart(2)}
+                      onMouseLeave={handleMouseLeaveStars}
+                      onClick={() => fixNumberOfStars(2)}
+                      className={`star ${numberOfStars >= 2 ? "active" : ""}`}
+                      icon={faStar}
+                    />
+                    <FontAwesomeIcon
+                      onMouseEnter={() => setNumberOfStart(3)}
+                      onMouseLeave={handleMouseLeaveStars}
+                      onClick={() => fixNumberOfStars(3)}
+                      className={`star ${numberOfStars >= 3 ? "active" : ""}`}
+                      icon={faStar}
+                    />
+                    <FontAwesomeIcon
+                      onMouseEnter={() => setNumberOfStart(4)}
+                      onMouseLeave={handleMouseLeaveStars}
+                      onClick={() => fixNumberOfStars(4)}
+                      className={`star ${numberOfStars >= 4 ? "active" : ""}`}
+                      icon={faStar}
+                    />
+                    <FontAwesomeIcon
+                      onMouseEnter={() => setNumberOfStart(5)}
+                      onMouseLeave={handleMouseLeaveStars}
+                      onClick={() => fixNumberOfStars(5)}
+                      className={`star ${numberOfStars === 5 ? "active" : ""}`}
+                      icon={faStar}
+                    />
+                  </div>
 
                   <Form.Group className="mb-3" controlId="recension-text">
                     <Form.Label>Recenzija*</Form.Label>

@@ -90,4 +90,24 @@
     transform: scaleX(1);
     transform-origin: center;
   }
+
+  .star-container {
+    margin: 30px 0px;
+
+    div {
+      font-size: 1.3em;
+      color: $base-title-color;
+      margin: 10px 0px;
+    }
+
+    .star {
+      font-size: 1.3em;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .star.active {
+      color: #fcb900;
+    }
+  }
 }
