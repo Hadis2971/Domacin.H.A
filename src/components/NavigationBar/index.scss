@@ -15,7 +15,7 @@
   color: $base-text-buttons-color;
 
   @media (max-width: 1280px) {
-    display: inline-block;
+    display: inline-block !important;
     margin-right: auto;
   }
 
