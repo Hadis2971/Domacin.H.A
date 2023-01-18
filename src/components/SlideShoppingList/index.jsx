@@ -47,31 +47,35 @@ export default ({ displaySlideShoppingList, setDisplaySlideShoppingList }) => {
       </div>
 
       <div id="list" key="my-key-2">
-        {Object.keys(listToDisplay)?.map((key) => (
-          <div className="items" key={key}>
-            <div className="title">{listToDisplay[key][0].title}</div>
-            <div className="controls">
-              <FontAwesomeIcon
-                icon={faAngleLeft}
-                className="arrow-icon"
-                onClick={() => decreaseByOneProduct(Number(key))}
-              />
-              <div>Kolicina: {listToDisplay[key].length}</div>
-              <FontAwesomeIcon
-                icon={faAngleRight}
-                className="arrow-icon"
-                onClick={() =>
-                  increaseByOneProduct({ ...listToDisplay[key][0] })
-                }
-              />
-              <FontAwesomeIcon
-                icon={faTrashCan}
-                className="delete-icon"
-                onClick={() => deleteProduct(Number(key))}
-              />
+        {Object.keys(listToDisplay)?.length ? (
+          Object.keys(listToDisplay).map((key) => (
+            <div className="items" key={key}>
+              <div className="title">{listToDisplay[key][0].title}</div>
+              <div className="controls">
+                <FontAwesomeIcon
+                  icon={faAngleLeft}
+                  className="arrow-icon"
+                  onClick={(evt) => decreaseByOneProduct(evt, Number(key))}
+                />
+                <div>Kolicina: {listToDisplay[key].length}</div>
+                <FontAwesomeIcon
+                  icon={faAngleRight}
+                  className="arrow-icon"
+                  onClick={(evt) =>
+                    increaseByOneProduct(evt, { ...listToDisplay[key][0] })
+                  }
+                />
+                <FontAwesomeIcon
+                  icon={faTrashCan}
+                  className="delete-icon"
+                  onClick={() => deleteProduct(Number(key))}
+                />
+              </div>
             </div>
-          </div>
-        )) || null}
+          ))
+        ) : (
+          <h2>Korpa je prazna</h2>
+        )}
       </div>
     </div>
   );

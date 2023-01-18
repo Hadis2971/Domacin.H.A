@@ -28,9 +28,9 @@ export default () => {
       />
 
       <PageContentContainer>
-        <Container>
+        <Container id="articles-page-container">
           <Row className="pt-10">
-            <Col md={7} sm={12}>
+            <Col md={{ span: 7, order: 1 }} xs={{ span: 12, order: 2 }}>
               {articles.map((article) => (
                 <React.Fragment key={article.id}>
                   <Article
@@ -42,7 +42,11 @@ export default () => {
                 </React.Fragment>
               ))}
             </Col>
-            <Col md={5} sm={12} className="articles-side">
+            <Col
+              md={{ span: 5, order: 2 }}
+              xs={{ span: 12, order: 1 }}
+              className="articles-side"
+            >
               <div>
                 <InputGroup className="mb-3">
                   <Form.Control

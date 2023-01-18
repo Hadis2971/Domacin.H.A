@@ -11,7 +11,13 @@
 .shopping-cart {
   display: flex;
   align-items: center;
+  margin-left: auto;
   color: $base-text-buttons-color;
+
+  @media (max-width: 1280px) {
+    display: inline-block;
+    margin-right: auto;
+  }
 
   span {
     font-size: 1.3em;

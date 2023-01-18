@@ -24,14 +24,16 @@ export default ({ children }) => {
   };
 
   const increaseByOneProduct = useCallback(
-    (item) => {
+    (evt, item) => {
+      evt.stopPropagation();
       addShoppingItems(item);
     },
     [setShoppingItems]
   );
 
   const decreaseByOneProduct = useCallback(
-    (id) => {
+    (evt, id) => {
+      evt.stopPropagation();
       const idx = shoppingItems.findIndex((item) => item.id === id);
       if (idx > -1) shoppingItems.splice(idx, 1);
       else return;

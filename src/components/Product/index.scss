@@ -1,57 +1,63 @@
 @import "../../index.scss";
 
-.card {
-  display: flex;
-  justify-items: center;
-  align-items: center;
-}
+.product-container {
+  width: 100%;
 
-.card-body {
-  position: relative;
-  height: 200px;
-}
-
-.card-title {
-  color: $base-title-color;
-}
-
-.card-text {
-  color: #999999;
-}
-
-.product-image-container {
-  width: 286px;
-  height: 180px;
-  overflow: hidden;
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.product-image-container:hover div,
-.product-image-container:focus div {
-  transform: scale(1.2);
-}
-
-.product-footer {
-  width: 85%;
-  position: absolute;
-  bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  svg {
-    font-size: 1.5em;
-    color: $base-text-buttons-color;
-    cursor: pointer;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
+  .card {
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
   }
 
-  svg:hover {
-    transform: scale(1.3);
+  .card-body {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+
+  .card-title {
+    color: $base-title-color;
+  }
+
+  .card-text {
+    color: #999999;
+  }
+
+  .product-image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .product-image-container:hover div,
+  .product-image-container:focus div {
+    transform: scale(1.2);
+  }
+
+  .product-footer {
+    width: 85%;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      font-size: 1.5em;
+      color: $base-text-buttons-color;
+      cursor: pointer;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    svg:hover {
+      transform: scale(1.3);
+    }
   }
 }

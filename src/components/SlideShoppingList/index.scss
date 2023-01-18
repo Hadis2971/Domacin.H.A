@@ -38,6 +38,13 @@
     height: 100vh;
     font-size: 1em;
 
+    h2 {
+      color: $base-text-buttons-color;
+      text-align: center;
+      position: relative;
+      top: 25%;
+    }
+
     .items {
       display: flex;
       justify-content: space-between;

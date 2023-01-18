@@ -1,6 +1,8 @@
 import React from "react";
+import { Suspense } from "react";
+import GridLoader from "react-spinners/GridLoader";
+
 import SuspenseImage from "../SuspenseImage";
-import GridLoaderSuspense from "../GridLoaderSuspense";
 
 import "./index.scss";
 
@@ -61,7 +63,13 @@ export default ({ imageSrc }) => {
           e.dataTransfer.setDragImage(img, 0, 0);
         }}
       >
-        <GridLoaderSuspense>
+        <Suspense
+          fallback={
+            <div className="inspert-image-loader">
+              <GridLoader color="#e91e63" />
+            </div>
+          }
+        >
           <SuspenseImage
             src={imageSrc}
             image={
@@ -73,7 +81,7 @@ export default ({ imageSrc }) => {
               />
             }
           />
-        </GridLoaderSuspense>
+        </Suspense>
       </div>
     </div>
   );

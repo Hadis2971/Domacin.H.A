@@ -55,49 +55,51 @@ export default ({
   }, []);
 
   return (
-    <Card style={{ width: "18rem" }}>
-      <div
-        className="product-image-container"
-        onClick={() => setShowDetails(true)}
-      >
-        <GridLoaderSuspense>
-          <SuspenseImage
-            src={imageSrc}
-            image={<ProductImage imageSrc={imageSrc} />}
-          />
-        </GridLoaderSuspense>
-      </div>
-      <Card.Body>
-        <Card.Title>
-          {title} - {`${price.toFixed(2)}KM`}
-        </Card.Title>
-        <Card.Text>{description.slice(0, 100)}...</Card.Text>
-        <div className="product-footer">
-          <Button
-            variant="primary"
-            className="product-btn"
-            onClick={() => setShowDetails(true)}
-          >
-            Detalji
-          </Button>
-
-          <FontAwesomeIcon icon={faShoppingCart} onClick={addItems} />
+    <div className="product-container">
+      <Card>
+        <div
+          className="product-image-container"
+          onClick={() => setShowDetails(true)}
+        >
+          <GridLoaderSuspense>
+            <SuspenseImage
+              src={imageSrc}
+              image={<ProductImage imageSrc={imageSrc} />}
+            />
+          </GridLoaderSuspense>
         </div>
-      </Card.Body>
+        <Card.Body>
+          <Card.Title>
+            {title} - {`${price.toFixed(2)}KM`}
+          </Card.Title>
+          <Card.Text>{description.slice(0, 100)}...</Card.Text>
+          <div className="product-footer">
+            <Button
+              variant="primary"
+              className="product-btn"
+              onClick={() => setShowDetails(true)}
+            >
+              Detalji
+            </Button>
 
-      <ProductDetails
-        show={showDetails}
-        id={id}
-        title={title}
-        description={description}
-        price={price}
-        skuCode={skuCode}
-        productCategory={productCategory}
-        productMarks={productMarks}
-        imageSrc="https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179"
-        addMultipleSameShoppingItems={addMultipleSameShoppingItems}
-        close={closeDetails}
-      />
-    </Card>
+            <FontAwesomeIcon icon={faShoppingCart} onClick={addItems} />
+          </div>
+        </Card.Body>
+
+        <ProductDetails
+          show={showDetails}
+          id={id}
+          title={title}
+          description={description}
+          price={price}
+          skuCode={skuCode}
+          productCategory={productCategory}
+          productMarks={productMarks}
+          imageSrc="https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179"
+          addMultipleSameShoppingItems={addMultipleSameShoppingItems}
+          close={closeDetails}
+        />
+      </Card>
+    </div>
   );
 };

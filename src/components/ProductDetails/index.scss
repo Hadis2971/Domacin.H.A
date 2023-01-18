@@ -56,6 +56,18 @@
     margin-bottom: 50px;
   }
 
+  .inspect-image-form-control-container {
+    @media (max-width: 1280px) {
+      padding-left: 0px;
+    }
+
+    .input-group {
+      @media (max-width: 1280px) {
+        margin-top: 20px;
+      }
+    }
+  }
+
   .recension-input {
     position: relative;
     border: none;

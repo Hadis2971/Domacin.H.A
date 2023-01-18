@@ -90,7 +90,7 @@ export default ({
       </Modal.Header>
       <Modal.Body>
         <Container>
-          <Row>
+          <Row className="inspect-image-form-control-container">
             <Col md={7} sm={12} id="inspect-image-container">
               <InspectImage imageSrc={imageSrc} />
             </Col>
