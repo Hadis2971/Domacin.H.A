@@ -5,14 +5,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Image from "react-bootstrap/Image";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-import SuspenseImage from "../SuspenseImage";
-import GridLoaderSuspense from "../GridLoaderSuspense";
+import InspectImage from "../InspectImage";
 
 import "./index.scss";
 
@@ -22,7 +20,7 @@ export default ({
   title,
   description,
   price,
-  imgSrc,
+  imageSrc,
   skuCode,
   productCategory,
   productMarks,
@@ -49,7 +47,7 @@ export default ({
           title,
           description,
           price,
-          imgSrc,
+          imageSrc,
           skuCode,
           productCategory,
           productMarks,
@@ -93,13 +91,8 @@ export default ({
       <Modal.Body>
         <Container>
           <Row>
-            <Col md={7} sm={12}>
-              <GridLoaderSuspense>
-                <SuspenseImage
-                  src={imgSrc}
-                  image={<Image fluid src={imgSrc} />}
-                />
-              </GridLoaderSuspense>
+            <Col md={7} sm={12} id="inspect-image-container">
+              <InspectImage imageSrc={imageSrc} />
             </Col>
             <Col md={5} sm={12}>
               <Form>

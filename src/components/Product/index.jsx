@@ -94,7 +94,7 @@ export default ({
         skuCode={skuCode}
         productCategory={productCategory}
         productMarks={productMarks}
-        imgSrc="https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179"
+        imageSrc="https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179"
         addMultipleSameShoppingItems={addMultipleSameShoppingItems}
         close={closeDetails}
       />

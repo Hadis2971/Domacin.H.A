@@ -1,0 +1,23 @@
+#draggable-container {
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.draggable {
+  position: relative;
+  width: 600px;
+  height: 400px;
+
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.inspect-inner-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}

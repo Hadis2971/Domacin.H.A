@@ -7,3 +7,4 @@ export { default as ProductDetails } from "./ProductDetails";
 export { default as SlideShoppingList } from "./SlideShoppingList";
 export { default as SuspenseImage } from "./SuspenseImage";
 export { default as GridLoaderSuspense } from "./GridLoaderSuspense";
+export { default as InspectImage } from "./InspectImage";
