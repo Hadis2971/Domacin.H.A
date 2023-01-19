@@ -5,8 +5,18 @@ const Wrapper = styled.div`
   top: ${(props) => (props.homePage ? "0px" : "250px")};
 `;
 
-export default ({ children, homePage }) => (
-  <Wrapper id="page-content-container" homePage={homePage}>
-    {children}
-  </Wrapper>
-);
+export default ({ children, homePage }) => {
+  const dispatchCloseSlideShoppingListEvent = () => {
+    document.dispatchEvent(new Event("close-on-document-click"));
+  };
+
+  return (
+    <Wrapper
+      id="page-content-container"
+      homePage={homePage}
+      onClick={dispatchCloseSlideShoppingListEvent}
+    >
+      {children}
+    </Wrapper>
+  );
+};

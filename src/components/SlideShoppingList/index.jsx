@@ -19,22 +19,6 @@ export default ({ displaySlideShoppingList, setDisplaySlideShoppingList }) => {
   } = useContext(StateContext);
   const listToDisplay = getShoppingItemsList(shoppingItems);
 
-  useEffect(() => {
-    const closeOnDocumentClickEvent = new Event("close-on-document-click");
-
-    document.addEventListener(
-      "close-on-document-click",
-      () => {
-        setDisplaySlideShoppingList(false);
-      },
-      false
-    );
-
-    document.addEventListener("click", (evt) => {
-      document.dispatchEvent(closeOnDocumentClickEvent);
-    });
-  }, []);
-
   return (
     <div
       id="slide-shopping-list-id"

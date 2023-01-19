@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { Home, Shop, Articles, NoMatch } from "./pages";
@@ -12,6 +12,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [displaySlideShoppingList, setDisplaySlideShoppingList] =
     useState(false);
+
+  useEffect(() => {
+    document.addEventListener(
+      "close-on-document-click",
+      () => {
+        setDisplaySlideShoppingList(false);
+      },
+      false
+    );
+  }, []);
 
   const toggleDisplaySlideShoppingList = (evt) => {
     evt.stopPropagation();
