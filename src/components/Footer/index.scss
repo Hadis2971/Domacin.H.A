@@ -1,0 +1,23 @@
+#footer-container {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 25px 20px;
+  background-color: #323437;
+  color: #fff;
+  display: flex;
+  align-items: center;
+
+  div:first-child {
+    margin-right: 20px;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+}

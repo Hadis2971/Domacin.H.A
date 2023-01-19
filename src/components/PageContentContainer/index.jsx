@@ -1,5 +1,8 @@
-import "./index.scss";
 import styled from "styled-components";
+
+import Footer from "../Footer";
+
+import "./index.scss";
 
 const Wrapper = styled.div`
   top: ${(props) => (props.homePage ? "0px" : "250px")};
@@ -17,6 +20,8 @@ export default ({ children, homePage }) => {
       onClick={dispatchCloseSlideShoppingListEvent}
     >
       {children}
+
+      <Footer />
     </Wrapper>
   );
 };
