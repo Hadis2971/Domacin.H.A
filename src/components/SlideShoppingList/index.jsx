@@ -23,7 +23,7 @@ export default ({ displaySlideShoppingList, setDisplaySlideShoppingList }) => {
     <div
       id="slide-shopping-list-id"
       className="slide-shopping-list"
-      style={displaySlideShoppingList ? { right: "0px" } : { right: "-3000px" }}
+      style={displaySlideShoppingList ? { right: "0px" } : { right: "-500px" }}
     >
       <div id="header">
         <h4>Domacin</h4>
