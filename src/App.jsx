@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { Home, Shop, Articles, NoMatch } from "./pages";
+import { Home, Shop, Articles, Account, NoMatch } from "./pages";
 import { NavBar, SlideShoppingList } from "./components";
 
 import StateContextProvider from "./state";
@@ -46,6 +46,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/shop" element={<Shop />} />
           <Route exact path="/articles" element={<Articles />} />
+          <Route exact path="/account" element={<Account />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>

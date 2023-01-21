@@ -8,7 +8,7 @@ export default () => (
       <Link to="/shop">Shop</Link>
     </div>
     <div>
-      <Link>Moj Racun</Link>
+      <Link to="/account">Moj Racun</Link>
     </div>
   </div>
 );

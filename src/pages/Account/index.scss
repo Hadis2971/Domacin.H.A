@@ -1,0 +1,60 @@
+@import "../../index.scss";
+
+#account-page-container {
+  box-sizing: border-box;
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  transform: translateY(-40%);
+  background-color: #fff;
+  border: 1px solid #a6a6a6;
+  border-radius: 5px;
+
+  h2 {
+    color: $base-title-color;
+  }
+
+  .submit-btn {
+    background-color: $base-text-buttons-color;
+    color: #fff;
+  }
+
+  .account-page-input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0%;
+  }
+
+  .account-page-input-container::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $base-text-buttons-color;
+    transform: scaleX(0);
+    -webkit-transition: transform 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .account-page-input:focus {
+    box-shadow: none;
+    outline: none;
+    border-bottom: none;
+  }
+
+  .account-page-input-container:focus-within::after {
+    transform-origin: center;
+    transform: scaleX(100%);
+  }
+
+  .form-check-input:focus {
+    box-shadow: none;
+  }
+
+  .form-check-input:checked {
+    background-color: $base-text-buttons-color;
+    border-color: $base-text-buttons-color;
+  }
+}
