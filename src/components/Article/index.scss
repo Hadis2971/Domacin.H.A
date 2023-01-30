@@ -1,26 +1,7 @@
 @import "../../index.scss";
 
+.article-footer {
+}
+
 .article-container {
-  border: 1px solid #d9d9d9;
-  border-radius: 5px;
-  height: 400px;
-  background-color: #fff;
-  position: relative;
-  margin-bottom: 20px;
-
-  .article-footer {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    border-top: 1px solid #d9d9d9;
-    padding: 10px;
-  }
-
-  h5 {
-    color: $base-title-color;
-  }
-
-  p {
-    color: $base-description-color;
-  }
 }

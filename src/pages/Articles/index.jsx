@@ -37,7 +37,6 @@ export default () => {
                     imageSrc={article.imageSrc}
                     title={article.title}
                     description={article.description}
-                    column
                   />
                 </React.Fragment>
               ))}

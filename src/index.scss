@@ -1,4 +1,4 @@
-$base-text-buttons-color: #e91e63;
+$primary-color: #e91e63;
 $base-description-color: #999999;
 $base-title-color: #3c4858;
 
@@ -26,12 +26,23 @@ body {
 }
 
 .btn.btn-primary {
-  background-color: $base-text-buttons-color;
+  background-color: $primary-color;
   color: #fff;
   outline: none;
   border: none;
 
   &:focus {
-    background-color: $base-text-buttons-color;
+    background-color: $primary-color;
   }
+}
+
+.form-control {
+  transition: border-color 0.2s linear;
+}
+
+.form-control:focus {
+  border-color: $primary-color;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }

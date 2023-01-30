@@ -2,7 +2,7 @@ const cache = new Map();
 
 export default ({ src, image }) => {
   const source = cache.get(src);
-  if (source) return image;
+  if (source) return source;
 
   let status = "pending";
 
@@ -10,7 +10,7 @@ export default ({ src, image }) => {
     const img = new Image();
     img.src = src;
     img.onload = () => {
-      cache.set(src, src);
+      cache.set(src, image);
       status = "success";
       resolve(src);
     };

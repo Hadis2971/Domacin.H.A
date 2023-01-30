@@ -6,7 +6,7 @@
   height: 100vh;
   z-index: 1000;
   top: 50px;
-  border-left: $base-text-buttons-color;
+  border-left: $primary-color;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -19,7 +19,7 @@
 
   #header {
     text-align: center;
-    background-color: $base-text-buttons-color;
+    background-color: $primary-color;
     color: #fff;
     padding: 10px 0px;
 
@@ -39,7 +39,7 @@
     font-size: 1em;
 
     h2 {
-      color: $base-text-buttons-color;
+      color: $primary-color;
       text-align: center;
       position: relative;
       top: 25%;
@@ -50,9 +50,9 @@
       justify-content: space-between;
       align-items: center;
       box-sizing: border-box;
-      color: $base-text-buttons-color;
+      color: $primary-color;
       margin-bottom: 20px;
-      border-bottom: 1px solid $base-text-buttons-color;
+      border-bottom: 1px solid $primary-color;
 
       .title {
         width: 70%;
@@ -82,7 +82,7 @@
 
         .delete-icon {
           margin-left: 10px;
-          color: $base-description-color;
+          color: #999999;
           -webkit-transition: all 0.5s;
           -moz-transition: all 0.5s;
           -o-transition: all 0.5s;

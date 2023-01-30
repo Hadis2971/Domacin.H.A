@@ -6,16 +6,38 @@ import SuspenseImage from "../SuspenseImage";
 
 import "./index.scss";
 
+const ArticleContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: ${(props) => (props.column ? "400px" : "auto")};
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 20px;
+
+  h5 {
+    color: #3c4858;
+  }
+
+  p {
+    color: #999999;
+  }
+`;
+
 const ArticleBody = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
   padding: 10px;
   flex-direction: ${(props) => (props.column ? "column" : "initial")};
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+  }
 `;
 
 const ArticleImageContainer = styled.div`
-  width: ${(props) => (props.column ? "100%" : "286px")};
+  width: ${(props) => (props.column ? "100%" : "60%")};
   height: ${(props) => (props.column ? "200px" : "180px")};
   overflow: hidden;
   position: relative;
@@ -27,6 +49,10 @@ const ArticleImageContainer = styled.div`
 
   &:focus div {
     transform: scale(1.2);
+  }
+
+  @media (max-width: 1280px) {
+    width: 100%;
   }
 `;
 
@@ -43,9 +69,28 @@ const ArticleImage = styled.div`
   transition: all 0.5s;
 `;
 
+const ArticleDescription = styled.div`
+  width: ${(props) => (props.column ? "100%" : "33%")};
+  margin-left: ${(props) => (props.column ? "0%" : "3%")};
+
+  @media (max-width: 1280px) {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+`;
+
+const ArticleFooter = styled.div`
+  position: ${(props) => (props.column ? "absolute" : "relative")};
+  bottom: ${(props) => (props.column ? "5px" : "0px")};
+  width: 100%;
+  border-top: 1px solid #d9d9d9;
+  padding: 10px;
+`;
+
 function Article({ imageSrc, title, description, column }) {
   return (
-    <div className="article-container">
+    <ArticleContainer column={column}>
       <ArticleBody column={column}>
         <ArticleImageContainer column={column}>
           <GridLoaderSuspense>
@@ -55,15 +100,15 @@ function Article({ imageSrc, title, description, column }) {
             />
           </GridLoaderSuspense>
         </ArticleImageContainer>
-        <div className="mt-3">
-          <h5>{title}</h5>
+        <ArticleDescription column={column}>
+          <h3>{title}</h3>
           <p>{description.slice(0, 100)}...</p>
-        </div>
+        </ArticleDescription>
       </ArticleBody>
-      <div className="article-footer">
+      <ArticleFooter column={column}>
         <Button>Saznaj Vise</Button>
-      </div>
-    </div>
+      </ArticleFooter>
+    </ArticleContainer>
   );
 }
 

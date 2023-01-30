@@ -7,7 +7,7 @@
   }
 
   .details {
-    color: $base-text-buttons-color;
+    color: $primary-color;
   }
 
   .description-control {
@@ -35,21 +35,21 @@
     }
 
     div:hover {
-      border-bottom: 2px solid $base-text-buttons-color;
+      border-bottom: 2px solid $primary-color;
       border-bottom-width: thin;
     }
 
     div.active {
-      border-bottom: 2px solid $base-text-buttons-color;
+      border-bottom: 2px solid $primary-color;
       border-bottom-width: thin;
-      color: $base-text-buttons-color;
+      color: $primary-color;
     }
   }
 
   .description {
     font-size: 1.1em;
     line-height: 1.7em;
-    color: $base-title-color;
+    color: #3c4858;
   }
 
   h4 {
@@ -90,7 +90,7 @@
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color: $base-text-buttons-color;
+    background-color: $primary-color;
     bottom: 0px;
     left: 0px;
     transform: scaleX(0);
