@@ -48,7 +48,7 @@ export default ({ children }) => {
       const filteredProducts = shoppingItems.filter((item) => item.id !== id);
       setShoppingItems(filteredProducts);
     },
-    [setShoppingItems]
+    [shoppingItems.length, setShoppingItems]
   );
 
   useEffect(() => {
